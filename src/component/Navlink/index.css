@@ -1,0 +1,26 @@
+.footer{
+    position: fixed;
+    bottom:0;
+    right:0;
+    width: 100%;
+    background-color: #ffffff;
+    display: flex;
+    flex-flow: row;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
+.footer-item{
+    flex:1;
+    display: flex;
+    flex-direction: column;
+    margin: 10px 0;
+}
+.footer-item-img{
+    width: 20px;
+    height:20px;
+}
+.footer-item-name{
+    font-size: 14px;
+    columns: #999999;
+}
