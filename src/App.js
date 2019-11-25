@@ -4,7 +4,10 @@ import {BrowserRouter,Route} from 'react-router-dom'
 import { Provider } from 'react-redux';
 import Login from './pages/login/index'
 import Regist from './pages/register/index'
+import Home from './pages/home/index'
 import store from './store';
+import UserInfe from './component/userinfo/userinfo'
+
 
 
 function App() {
@@ -12,8 +15,10 @@ function App() {
     <div className="App">
       <Provider store={store}>
       <BrowserRouter>
-        <Route path="/" exact  component={Login}></Route>
+        <UserInfe></UserInfe>
+        <Route path="/login" exact  component={Login}></Route>
         <Route path="/regist" exact  component={Regist}></Route>
+        <Route path="/home" exact  component={Home}></Route>
       </BrowserRouter>
       </Provider>
     </div>

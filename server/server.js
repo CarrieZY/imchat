@@ -1,12 +1,16 @@
 // 引入express模块
 const express=require('express')
+// 引入user.js模块
+const userRouter = require('./user')
 // 新建app
 const app=express()
+// 在模块中使用这个路由
+app.use('/user',userRouter)
 // res.send()和res.json必须掌握的
 // get()里面有两个参数  第一个根路径  第二个是回调后的函数 req请求  res响应
-app.get('/',function(req,res){
-    res.send('<h1>hello world</h1>')
-})
+// app.get('/',function(req,res){
+//     res.send('<h1>hello world</h1>')
+// })
 // res.json可以直接返回json数据
 app.get('/data',function(req,res){
     res.json({name:'imooc',age:'19',type:'boys'})
