@@ -1,10 +1,5 @@
-const defaultState=({
-	
-});
-
-export default (state = defaultState, action) => {
-	switch(action.type) {
-		default:
-			return state;
-	}
-}
+//合并所有reducer，并且返回
+import {combineReducers} from 'redux'
+import { user } from './userducer'
+ 
+export default combineReducers({user})

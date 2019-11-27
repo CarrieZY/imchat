@@ -3,7 +3,8 @@ import { Button ,Input} from 'antd';
 import 'antd/dist/antd.css'
 import {Link} from 'react-router-dom'
 import '../login/index.css'
-
+import {connect} from 'react-redux'
+import * as actionCreators from '../../store/userducer'
 class Regist extends Component {
     constructor(props){
         super(props)
@@ -12,7 +13,6 @@ class Regist extends Component {
             pwd:'',
             pwdd:''
         }
-        this.handleClick=this.handleClick.bind(this)
     }
     render() { 
         return ( 
@@ -33,10 +33,14 @@ class Regist extends Component {
             [key]: val.target.value
         })
     }
-
-    handleClick(){
-        console.log(this.state)
-    }
 }
- 
-export default Regist;
+const mapState=(state)=>{
+    console.log(state)
+} 
+
+const mapProps=(dispatch)=>({
+    handleClick(){
+        dispatch(actionCreators.register());
+    }
+})
+export default connect(mapState,mapProps)(Regist);
